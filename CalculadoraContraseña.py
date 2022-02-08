@@ -1,0 +1,106 @@
+ # -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 21 10:34:20 2021
+
+@author: DiegoAlonsoHernando
+"""
+
+
+n = 0
+passwd=input("Crea una contraseña: ")
+contraseña1=passwd
+contraseña2=input("Confirma la contraseña: ")
+if (contraseña1==contraseña2):
+                contraseña1=input("Introduce la contraseña para poder acceder: ")
+                while(contraseña1!=passwd and n<5):
+                    contraseña1= input(f"Error número {n+1} Introduce la contraseña correcta: ")
+                    n = n+1
+    
+                if( n>=5):
+                    print("Alcanzado número máximo de fallos")
+          
+                if(n<5):
+                    print("Bienvenido")
+                    calculadora=0
+                    while calculadora!=10:
+                        calculadora=(int(input("Introduce que operación quieres hacer:\n \
+                        1.Suma de dos números\n \
+                        2.Resta de dos números\n \
+                        3.Multiplicación de dos números\n \
+                        4.División de dos números\n \
+                        5.Módulo de dos números\n \
+                        6.Cociente de dos números\n \
+                        7.Exponente de dos números\n \
+                        8.Calculadora de áreas de cuadrado para 'n' números pares\n \
+                        9.Calculadora de áreas de círculos para 'n' números pares\n \
+                        10.Salir\n     " )))
+                        while calculadora < 1 or calculadora > 10:
+                            calculadora = int(input("Introduce una opción válida: "))
+                        if calculadora == 1:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 + n2
+                            print( "El resultado de la suma es", resultado )
+            
+                        elif calculadora == 2:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 - n2
+                            print( "El resultado de la resta es", resultado )
+                        elif calculadora == 3:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 * n2
+                            print( "El resultado de la multiplicación  es", resultado )
+                        elif calculadora == 4:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            while n2 == 0 :
+                                print( "El número introducido no puede ser igual a 0")
+                                n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 / n2
+                            print( "El resultado de la división es:", resultado )
+                        elif calculadora == 5:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            while n2 == 0 :
+                                print( "El número introducido no puede ser igual a 0")
+                                n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 % n2
+                            print( "El módulo de la operación es:", resultado )
+                        elif calculadora == 6:
+                            n1=(float(input("Introduce un número: ")))
+                            n2=(float(input("Introduce otro número: ")))
+                            while n2 == 0 :
+                                print( "El número introducido no puede ser igual a 0")
+                                n2=(float(input("Introduce otro número: ")))
+                            resultado = n1 // n2
+                            print( "El resultado de la operación es:", resultado )
+                        elif calculadora == 7:
+                            n1=(int(input("Introduce un número: ")))
+                            n2=(int(input("Introduce otro número: ")))
+                            resultado = n1**n2
+                            print( "El resultado de la operación es", resultado )
+                        elif calculadora == 8:
+                            x=1
+                            n1=(int(input("Introduce un número: ")))
+                            for i in range(1, n1):
+                                if x<=20 and i % 2==0:
+                                    resultado = i**2
+                                    print(f"El area del cuadrado {x} con lado {i} es igual a {resultado}")
+                                    x=x+1    
+                        elif calculadora == 9:
+                            x=1
+                            n1=(int(input("Introduce un número: ")))
+                            for i in range(1, n1):
+                                if x<=20 and i % 2==0:
+                                    resultado = 3.1416*i**2
+                                    print(f"El area del círculo {x} con radio {i} es igual a {resultado}")
+                                    x=x+1    
+                        elif calculadora == 10:
+                            print( "Adios")   
+
+       
+else:
+    print("Las contraseñas no coinciden")
+    
